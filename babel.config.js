@@ -1,3 +1,22 @@
 module.exports = {
-  presets: ['module:@react-native/babel-preset'],
+  env: {
+    production: {
+      plugins: ['react-native-paper/babel'],
+    },
+  },
+  presets:[
+    'babel-preset-expo',
+  ],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: './app',
+        alias: {
+          '-': './app',
+        },
+      },
+    ],
+    'react-native-reanimated/plugin',
+  ],
 };
