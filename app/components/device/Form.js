@@ -1,7 +1,7 @@
 import React, {Fragment, useContext, useLayoutEffect, useState} from 'react';
 import {useMutation, useQuery} from '@apollo/client';
 import {StyleSheet, View} from 'react-native';
-import Clipboard from '@react-native-community/clipboard';
+import Clipboard from '@react-native-clipboard/clipboard';
 import {Button, Divider, IconButton, List, Paragraph, Subheading, TextInput} from 'react-native-paper';
 import {get} from 'lodash';
 

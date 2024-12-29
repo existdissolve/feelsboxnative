@@ -1628,7 +1628,7 @@ PODS:
   - RecaptchaInterop (100.0.0)
   - RNCAsyncStorage (1.24.0):
     - React-Core
-  - RNCClipboard (1.5.1):
+  - RNCClipboard (1.15.0):
     - React-Core
   - RNCMaskedView (0.1.11):
     - React
@@ -1845,7 +1845,7 @@ DEPENDENCIES:
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
-  - "RNCClipboard (from `../node_modules/@react-native-community/clipboard`)"
+  - "RNCClipboard (from `../node_modules/@react-native-clipboard/clipboard`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
@@ -2008,7 +2008,7 @@ EXTERNAL SOURCES:
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCClipboard:
-    :path: "../node_modules/@react-native-community/clipboard"
+    :path: "../node_modules/@react-native-clipboard/clipboard"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
   RNFBApp:
@@ -2108,7 +2108,7 @@ SPEC CHECKSUMS:
   ReactCommon: d5e70af52fb05bd546fd7f002c549f57116c59e4
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   RNCAsyncStorage: ec53e44dc3e75b44aa2a9f37618a49c3bc080a7a
-  RNCClipboard: 41d8d918092ae8e676f18adada19104fa3e68495
+  RNCClipboard: 69ab8e51324d5b351f6ba72bbdb72478087a2c64
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNFBApp: 017499cd7ea340963bfac43b4fcb28d2b0b21a09
   RNFBAuth: 97633be48cc4e539d954270a218785d2e3f9fde7
@@ -2118,8 +2118,8 @@ SPEC CHECKSUMS:
   RNScreens: de55b9d7de8a017d1588dcb70415492d0b0597c2
   RNVectorIcons: 6336d2071d885cc1081de5ab5deeaad4416aac50
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
-  Yoga: 33604ac44957ebe3f30f15b4cd0a3f96634e624a
+  Yoga: c8810b40c43fa71cc1492f358ad5cd5fc1b505da
 
 PODFILE CHECKSUM: d06b3b48d2bc762eb50b9c03725b38f581b39dc1
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2
