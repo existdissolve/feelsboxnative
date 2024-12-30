@@ -43,7 +43,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>This app needs to get your location for accessing weather data</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>This application requires Bluetooth to connect to FeelsBox</string>
 	<key>UILaunchStoryboardName</key>

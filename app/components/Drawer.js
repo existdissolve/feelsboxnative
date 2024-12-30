@@ -5,12 +5,18 @@ import {get} from 'lodash';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {DrawerContentScrollView} from '@react-navigation/drawer';
 import {useNavigation} from '@react-navigation/native';
+import {useMutation} from '@apollo/client';
+import GetLocation from 'react-native-get-location'
 
 import {AuthenticationContext} from '-/components/Authentication';
+import {viewWeather as viewWeatherMutation} from '-/graphql/device';
+import {SnackbarContext} from '-/components/shared';
 
 export default props => {
     const authentication = useContext(AuthenticationContext);
     const navigation = useNavigation();
+    const [viewWeather] = useMutation(viewWeatherMutation);
+    const {show} = useContext(SnackbarContext);
     const theme = useTheme();
     const style = {
         backgroundColor: get(theme, 'colors.background')
@@ -27,6 +33,30 @@ export default props => {
         AsyncStorage.removeItem('lastRoute');
     };
 
+    const onWeatherPress = () => {
+        GetLocation.getCurrentPosition({
+            enableHighAccuracy: true,
+            timeout: 60000,
+        }).then(location => {
+            const {latitude, longitude} = location;
+            
+            viewWeather({
+                variables: {
+                    latitude,
+                    longitude
+                }
+            });
+        }).catch(error => {
+            const {code} = error;
+            
+            if (code === 'UNAUTHORIZED') {
+                show('Please enable location services for this application.');
+            } else {
+                show('There was a problem getting your location.');
+            }
+        });
+    };
+
     return (
         <DrawerContentScrollView {...props} style={style}>
             <View>
@@ -37,6 +67,7 @@ export default props => {
                     <Drawer.Item label="Device Groups" onPress={onPress.bind(null, 'devicegroups')} icon="tablet-cellphone" />
                     <Drawer.Item label="Connect Device" onPress={onPress.bind(null, 'bluetooth')} icon="bluetooth-connect" />
                     <Drawer.Item label="My Account" onPress={onPress.bind(null, 'account')} icon="account-box" />
+                    <Drawer.Item label="Show Weather" onPress={onWeatherPress} icon="weather-partly-cloudy" />
                     <Drawer.Item label="Logout" onPress={onLogoutPress} icon="logout-variant" />
                 </Drawer.Section>
             </View>

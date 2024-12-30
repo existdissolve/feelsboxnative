@@ -44,10 +44,7 @@ const styles = StyleSheet.create({
     actions: {
         display: 'flex',
         paddingHorizontal: 25,
-        paddingVertical: 15,
-        marginTop: 15,
-        borderTopColor: '#3E3E3E',
-        borderTopWidth: 1
+        paddingVertical: 5
     },
     cancelBtn: {
         marginRight: 10

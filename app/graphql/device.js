@@ -73,7 +73,7 @@ export const updateDevice = gql`
 `;
 
 export const viewWeather = gql`
-    mutation viewWeather {
-        viewWeather
+    mutation viewWeather($latitude: Float!, $longitude: Float!) {
+        viewWeather(latitude: $latitude, longitude: $longitude)
     }
 `;
